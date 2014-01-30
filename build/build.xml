@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mhs_bukkit_plugin" default="makejar" basedir=".">
+	
+  <property name="stagingDir" value="../staging" />
+  <property name="src" value="../src" />
+  <property name="bukkit_jar_path" value="/programs/bukkit/bukkit-1.7.2-R0.1-20131209.222727-6.jar" />
+  <property name="dist" value="../dist" />
+  <property name="bukkitDir" value="/programs/bukkit" />
+  
+  <target name="init" description="Sets up env for build.">
+  	<mkdir dir="${stagingDir}" />
+  	<mkdir dir="${dist}" />
+  </target>
+  
+  <target name="compile" description="Compiles Java source files to staging directory." depends="init">
+  	<javac srcdir="${src}"
+  	         destdir="${stagingDir}"
+  	         classpath="${bukkit_jar_path}"
+  	         debug="on"
+  	         source="1.6"
+  	  />  
+  </target>
+	
+  <target name ="makejar" description="Create a jar for the MHS Bukkit Plugin" depends="compile">
+  	<copy todir="../bin">
+  	  <fileset dir="..">
+  	    <include name="plugin.yml"/>
+  	  </fileset>
+  	</copy>
+    <jar destfile="${dist}/MHSBukkitPlugin.jar" 
+    	basedir="${basedir}/../bin"/>
+  </target>
+	
+  <target name="pushToBukkit" description="Copy plugin JAR to Bukkit" depends="makejar">
+  	<copy todir="${bukkitDir}/plugins">
+  		<fileset dir="${dist}">
+  			<include name="MHSBukkitPlugin.jar"/>
+  		</fileset>
+  	</copy>
+  </target>
+	
+  <target name="deployPlugin" description="Builds Bukkit plugin JAR, copies is to Bukkit dir, and starts bukkit server." depends="pushToBukkit">
+  	<exec dir="${bukkitDir}/" executable="run.bat" spawn="true" /> 	  
+  </target>
+</project>
