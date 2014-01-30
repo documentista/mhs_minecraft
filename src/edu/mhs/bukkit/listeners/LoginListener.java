@@ -1,4 +1,4 @@
-package com.gmail.tgdolan.bukkit.listeners;
+package edu.mhs.bukkit.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;

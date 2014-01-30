@@ -1,11 +1,11 @@
-package com.gmail.tgdolan.bukkit.testplugin;
+package edu.mhs.bukkit.plugin;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.gmail.tgdolan.bukkit.listeners.LoginListener;
+import edu.mhs.bukkit.listeners.LoginListener;
 
 public class TestPlugin extends JavaPlugin {
 	

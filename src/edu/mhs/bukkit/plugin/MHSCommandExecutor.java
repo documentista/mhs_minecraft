@@ -1,4 +1,4 @@
-package com.gmail.tgdolan.bukkit.testplugin;
+package edu.mhs.bukkit.plugin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
