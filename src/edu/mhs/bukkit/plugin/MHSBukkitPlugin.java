@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import edu.mhs.bukkit.listeners.LoginListener;
 
-public class TestPlugin extends JavaPlugin {
+public class MHSBukkitPlugin extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
