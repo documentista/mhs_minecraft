@@ -7,9 +7,9 @@ import org.bukkit.command.CommandSender;
 
 public class MHSCommandExecutor implements CommandExecutor {
 	
-	private TestPlugin plugin; // pointer to your main class, unrequired if you don't need methods from the main class
+	private MHSBukkitPlugin plugin; // pointer to your main class, unrequired if you don't need methods from the main class
 	 
-	public MHSCommandExecutor(TestPlugin plugin) {
+	public MHSCommandExecutor(MHSBukkitPlugin plugin) {
 		this.plugin = plugin;
 	}
 
